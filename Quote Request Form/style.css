@@ -1,0 +1,311 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f3f6fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 760px;
+}
+
+.form-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+    animation: fadeIn 0.6s ease;
+}
+
+.form-box h1 {
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.form-box p {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.progress {
+    width: 33%;
+    height: 100%;
+    background: #2563eb;
+    transition: 0.4s ease;
+}
+
+/* =========================
+   STEP INDICATOR
+========================= */
+
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.step {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #d1d5db;
+    color: #475569;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.step.active {
+    background: #2563eb;
+    color: white;
+}
+
+/* =========================
+   FORM STEPS
+========================= */
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form-step h2 {
+    margin-bottom: 25px;
+    color: #1e293b;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #334155;
+    font-weight: 500;
+}
+
+.input-group label i {
+    color: #2563eb;
+    margin-right: 8px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #dbe3ee;
+    border-radius: 10px;
+    background: #fafcff;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.input-group input:hover,
+.input-group select:hover,
+.input-group textarea:hover {
+    border-color: #93c5fd;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.error {
+    display: block;
+    margin-top: 5px;
+    color: #dc2626;
+    font-size: 13px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.next-btn,
+.prev-btn,
+.submit-btn {
+    padding: 13px 28px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.next-btn,
+.submit-btn {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 8px 18px rgba(37,99,235,.20);
+}
+
+.next-btn:hover,
+.submit-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.prev-btn {
+    background: #e5e7eb;
+    color: #334155;
+}
+
+.prev-btn:hover {
+    background: #d1d5db;
+}
+
+.next-btn i,
+.prev-btn i,
+.submit-btn i {
+    margin-left: 6px;
+}
+
+.prev-btn i {
+    margin-left: 0;
+    margin-right: 6px;
+}
+
+/* =========================
+   REVIEW BOX
+========================= */
+
+.review-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    line-height: 2;
+}
+
+.review-description {
+    background: white;
+    border: 1px solid #dbe3ee;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 8px;
+}
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+
+.success-message {
+    display: none;
+    text-align: center;
+    padding: 30px;
+}
+
+.success-message i {
+    color: #16a34a;
+    margin-right: 8px;
+}
+
+.success-message h2 {
+    color: #16a34a;
+    margin-bottom: 15px;
+}
+
+.success-message p {
+    color: #475569;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:650px){
+
+.form-box{
+padding:25px;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+.next-btn,
+.prev-btn,
+.submit-btn{
+width:100%;
+}
+
+}
