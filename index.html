@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Professional Quote Request Form</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="form-box">
+
+            <h1>Professional Quote Request</h1>
+
+            <p>
+                Complete the form below and receive a customized project quotation from our team.
+            </p>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress" id="progress"></div>
+            </div>
+
+            <!-- Step Indicator -->
+            <div class="step-indicator">
+                <div class="step active">1</div>
+                <div class="step">2</div>
+                <div class="step">3</div>
+            </div>
+
+            <form id="quoteForm">
+
+                <!-- ================= STEP 1 ================= -->
+
+                <div class="form-step active">
+
+                    <h2>Contact Information</h2>
+
+                    <div class="input-group">
+
+                        <label>
+                            <i class="fa-solid fa-user"></i>
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your full name">
+
+                        <small class="error"></small>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>
+                            <i class="fa-solid fa-envelope"></i>
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="example@email.com">
+
+                        <small class="error"></small>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>
+                            <i class="fa-solid fa-phone"></i>
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="+92 300 1234567">
+
+                        <small class="error"></small>
+
+                    </div>
+
+                    <button type="button" class="next-btn">
+                        Next
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+                <!-- ================= STEP 2 ================= -->
+
+                <div class="form-step">
+
+                    <h2>Project Details</h2>
+
+                    <div class="input-group">
+
+                        <label>
+                            <i class="fa-solid fa-briefcase"></i>
+                            Service Required
+                        </label>
+
+                        <select id="service">
+
+                            <option value="">Select Service</option>
+
+                            <option>Website Development</option>
+
+                            <option>UI / UX Design</option>
+
+                            <option>E-Commerce Website</option>
+
+                            <option>SEO Optimization</option>
+
+                            <option>Graphic Design</option>
+
+                            <option>Mobile App Development</option>
+
+                            <option>Other</option>
+
+                        </select>
+
+                        <small class="error"></small>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>
+                            <i class="fa-solid fa-wallet"></i>
+                            Estimated Budget
+                        </label>
+
+                        <select id="budget">
+
+                            <option value="">Select Budget</option>
+
+                            <option>$500 - $1000</option>
+
+                            <option>$1000 - $3000</option>
+
+                            <option>$3000 - $5000</option>
+
+                            <option>$5000+</option>
+
+                        </select>
+
+                        <small class="error"></small>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>
+                            <i class="fa-solid fa-file-lines"></i>
+                            Project Description
+                        </label>
+
+                        <textarea
+                            id="description"
+                            rows="5"
+                            placeholder="Describe your project in detail..."></textarea>
+
+                        <small class="error"></small>
+
+                    </div>
+
+                    <div class="buttons">
+
+                        <button type="button" class="prev-btn">
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                            Previous
+
+                        </button>
+
+                        <button type="button" class="next-btn">
+
+                            Next
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= STEP 3 ================= -->
+
+                <div class="form-step">
+
+                    <h2>Review Your Information</h2>
+
+                    <div class="review-box">
+
+                        <p><strong>Name:</strong> <span id="reviewName"></span></p>
+
+                        <p><strong>Email:</strong> <span id="reviewEmail"></span></p>
+
+                        <p><strong>Phone:</strong> <span id="reviewPhone"></span></p>
+
+                        <p><strong>Service:</strong> <span id="reviewService"></span></p>
+
+                        <p><strong>Budget:</strong> <span id="reviewBudget"></span></p>
+
+                        <p><strong>Description:</strong></p>
+
+                        <div id="reviewDescription" class="review-description"></div>
+
+                    </div>
+
+                    <div class="buttons">
+
+                        <button type="button" class="prev-btn">
+
+                            <i class="fa-solid fa-arrow-left"></i>
+
+                            Previous
+
+                        </button>
+
+                        <button type="submit" class="submit-btn">
+
+                            <i class="fa-solid fa-paper-plane"></i>
+
+                            Submit Request
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+            <!-- Success Message -->
+
+            <div id="successMessage" class="success-message">
+
+                <h2>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Thank You!
+                </h2>
+
+                <p>Your quote request has been submitted successfully.</p>
+
+                <p>Our team will contact you within 24 hours.</p>
+                
+                <button class="submit-btn" onclick="location.reload()">
+    <i class="fa-solid fa-rotate-right"></i>
+    Submit Another Request
+</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
